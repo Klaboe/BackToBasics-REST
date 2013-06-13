@@ -33,6 +33,15 @@ public class RestEasyServer {
 		return Response.status(200).entity("Heeeeelllo cruel world! This is " + name + " calling you!").build();
 	}
 	
+	@POST
+	@Path("/hello/addname/{name}")
+	@Consumes(MediaType.TEXT_PLAIN)
+	public Response addName(@PathParam("name") String name) {
+		nameList.add(name);
+		
+		return Response.status(200).entity(name + " har blitt lagt til").build();
+	}
+	
 	@GET
 	@Path("/hello/allnames")
 	@Produces(MediaType.TEXT_PLAIN)
@@ -53,14 +62,4 @@ public class RestEasyServer {
 		
 		return Response.status(200).entity(sBuilder.toString()).build();
 	}
-	
-	@POST
-	@Path("/hello/addname/{name}")
-	@Consumes(MediaType.TEXT_PLAIN)
-	public Response addName(@PathParam("name") String name) {
-		nameList.add(name);
-		
-		return Response.status(200).entity(name + " har blitt lagt til").build();
-	}
-	
 }
