@@ -3,6 +3,7 @@
   <groupId>BackToBasics</groupId>
   <artifactId>REST-edition</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
   <name>Back to basics - REST-edition</name>
   
   <repositories>
@@ -15,6 +16,17 @@
   </repositories>
   
   <dependencies>
+      <dependency>
+      	<groupId>org.eclipse.jetty</groupId>
+      	<artifactId>jetty-server</artifactId>
+      	<version>9.0.3.v20130506</version>
+      </dependency>
+      <dependency>
+      	<groupId>org.eclipse.jetty</groupId>
+      	<artifactId>jetty-servlet</artifactId>
+      	<version>9.0.3.v20130506</version>
+      </dependency>      
+      
 	  <dependency>
 	    <groupId>javax.ws.rs</groupId>
 	    <artifactId>javax.ws.rs-api</artifactId>
@@ -32,15 +44,15 @@
 		<version>3.0-beta-6</version>
 	  </dependency>	  
 	  <dependency>
-	  	<groupId>org.glassfish.jersey.core</groupId>
+	  	<groupId>com.sun.jersey</groupId>
 	  	<artifactId>jersey-server</artifactId>
-	  	<version>2.0</version>
+	  	<version>1.17</version>
 	  	<scope>provided</scope>
 	  </dependency>
 	  <dependency>
-	  	<groupId>org.glassfish.jersey.core</groupId>
+	  	<groupId>com.sun.jersey</groupId>
 	  	<artifactId>jersey-client</artifactId>
-	  	<version>2.0</version>
+	  	<version>1.17</version>
 	  	<scope>provided</scope>
 	  </dependency>  
   </dependencies>
