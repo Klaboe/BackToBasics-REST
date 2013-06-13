@@ -5,15 +5,14 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-import backtobasic.rest.resteasy.server.RestEasyServer;
+import backtobasic.rest.jaxrs.server.RestServerServices;
 
 public class Services extends Application {
 	
 	private Set<Object> singletons = new HashSet<Object>();
 	
 	public Services() {
-		singletons.add(new RestEasyServer());
-//		singletons.add(new JerseyServer());
+		singletons.add(new RestServerServices());
 	}
 	
 	@Override

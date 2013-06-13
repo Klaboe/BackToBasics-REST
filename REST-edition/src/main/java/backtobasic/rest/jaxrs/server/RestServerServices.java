@@ -1,11 +1,11 @@
-package backtobasic.rest.resteasy.server;
+package backtobasic.rest.jaxrs.server;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -13,11 +13,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/")
-public class RestEasyServer {
+public class RestServerServices {
 	
 	private List<String> nameList = new ArrayList<String>();
 	
-	public RestEasyServer() { }
+	public RestServerServices() { }
 	
 	@GET
 	@Path("/hello")
@@ -30,16 +30,14 @@ public class RestEasyServer {
 	@Path("/hello/{name}")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response getHelloWorldName(@PathParam("name") String name) {
-		return Response.status(200).entity("Heeeeelllo cruel world! This is " + name + " calling you!").build();
+		return Response.status(200).entity("Heeeeelllo cruel world! This is " + name + " cursing you!").build();
 	}
 	
-	@POST
+	@PUT
 	@Path("/hello/addname/{name}")
 	@Consumes(MediaType.TEXT_PLAIN)
-	public Response addName(@PathParam("name") String name) {
+	public void addName(@PathParam("name") String name) {
 		nameList.add(name);
-		
-		return Response.status(200).entity(name + " har blitt lagt til").build();
 	}
 	
 	@GET
@@ -56,7 +54,7 @@ public class RestEasyServer {
 		
 		if (!nameList.isEmpty()) {
 			return Response.status(200)
-					.entity(sBuilder.substring(0, sBuilder.length() - 2) + ".")
+					.entity(sBuilder.substring(0, sBuilder.length() - 1) + ".")
 					.build();
 		}
 		
