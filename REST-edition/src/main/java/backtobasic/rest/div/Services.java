@@ -5,7 +5,7 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
-import backtobasic.rest.jaxrs.server.RestServerServices;
+import backtobasic.rest.jaxrs.RestServerServices;
 
 public class Services extends Application {
 	

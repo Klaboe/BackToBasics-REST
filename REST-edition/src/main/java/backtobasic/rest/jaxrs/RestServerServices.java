@@ -1,4 +1,4 @@
-package backtobasic.rest.jaxrs.server;
+package backtobasic.rest.jaxrs;
 
 import java.util.ArrayList;
 import java.util.List;
