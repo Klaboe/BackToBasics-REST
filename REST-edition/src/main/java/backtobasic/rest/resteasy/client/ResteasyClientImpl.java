@@ -21,9 +21,9 @@ public class ResteasyClientImpl {
 		
 		ResteasyClientInterfaceProxy proxy = webTarget.proxy(ResteasyClientInterfaceProxy.class);
 		
-		String hello = proxy.getHelloCruelWorld();
+		String hellos = proxy.getHelloCruelWorld();
 		
-		return hello;		
+		return hellos;		
 	}
 	
 	public static void main(String[] args) {
