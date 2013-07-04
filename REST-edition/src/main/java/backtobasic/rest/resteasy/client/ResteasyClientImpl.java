@@ -11,7 +11,7 @@ import org.jboss.resteasy.client.jaxrs.engines.ApacheHttpClient4Engine;
 
 public class ResteasyClientImpl {
 	
-	public String getHelloworld() {
+	public static String getHelloworld() {
 		ClientConnectionManager cm = new ThreadSafeClientConnManager();
 		HttpClient httpClient = new DefaultHttpClient(cm);
 		ApacheHttpClient4Engine engine = new ApacheHttpClient4Engine(httpClient);
@@ -25,6 +25,11 @@ public class ResteasyClientImpl {
 		
 		return hello;		
 	}
+	
+	public static void main(String[] args) {
+		System.out.println(getHelloworld());
+	}
+	
 	
 	
 }
